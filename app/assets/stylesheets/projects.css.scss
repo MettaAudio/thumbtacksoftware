@@ -1,3 +1,130 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a:link, a:visited {color:#000000;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+a:hover {color:#990000;}
+a:active {color:#493131;}
+
+
+ul.nav {
+  padding-left: 30px;
+}
+
+ul.nav li {
+  list-style-type: none;
+  display: inline-block;
+  font-size: 24px;
+  padding-top: 29px;
+}
+
+address {
+  font: normal 1.2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color: #493131;
+}
+
+
+/*Paper style for the curled drop shadow*/
+.paper{
+    width: 950px;
+    height:800px;
+  border: 1px solid #c9c9c9;
+}
+
+#about #logo {
+  margin-top: 35px;
+  margin-bottom: 45px;
+  margin-left: 20px;
+}
+
+.drop-shadow {
+    position: relative;
+    padding:1em;
+    margin:2em 10px 4em;
+    background:#fff;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadow:before,
+.drop-shadow:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+
+
+.lifted {
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+.lifted:before,
+.lifted:after {
+    bottom:15px;
+    left:10px;
+    width:50%;
+    height:20%;
+    max-width:350px;
+    -webkit-box-shadow:0 20px 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 20px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:0 20px 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+}
+
+.lifted:after {
+    right:10px;
+    left:auto;
+    -webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+    -ms-transform:rotate(5deg);
+    -o-transform:rotate(5deg);
+    transform:rotate(5deg);
+}
+
+// ========= Portfolio Rollover =========
+.boxgrid {
+  width: 270px;
+  height: 171px;
+  overflow: hidden;
+  position: relative;
+}
+
+.boxgrid img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
+.boxcaption {
+  float: left;
+  top: 180px;
+  position: absolute;
+  background: #000;
+  height: 70px;
+  width: 100%;
+  opacity: .7;
+  padding: 15px;
+  /* For IE 5-7 */
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  /* For IE 8 */
+  -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+.boxcaption h5 {
+  color: white;
+}
+
+.captionfull .boxcaption {
+  top: 175px;
+  left: 0;
+}

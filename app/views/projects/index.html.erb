@@ -1,37 +1,14 @@
-<h1>Listing projects</h1>
-
-<table>
-  <tr>
-    <th>Url</th>
-    <th>Launch date</th>
-    <th>Description</th>
-    <th>Responsibilities</th>
-    <th>Title</th>
-    <th>Technology</th>
-    <th>Image</th>
-    <th>Git</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Portfolio</h1>
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.url %></td>
-    <td><%= project.launch_date %></td>
-    <td><%= project.description %></td>
-    <td><%= project.responsibilities %></td>
-    <td><%= project.title %></td>
-    <td><%= project.technology %></td>
-    <td><%= project.image %></td>
-    <td><%= project.git %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <div class="span-8">
+      <div class="boxgrid captionfull">
+        <%= image_tag '8press_270px.png' %>
+        <div class="cover boxcaption">
+          <h5><%= project.title %></h5>
+          <p><%= link_to 'edit', edit_project_path(project) %></p>
+        </div>
+      </div>
+    </div>
+
+    <%= cycle('','<div class="clear"></div>') %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project', new_project_path %>

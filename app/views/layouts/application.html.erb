@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Tts</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Thumb Tack Software :: Web development, Ruby on Rails and iOS app development in Fort Wayne, Indiana</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="assets/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+     <%= content_for?(:content) ? yield(:content) : yield %>
+    </div>
 
-<%= yield %>
-
-</body>
+  </body>
 </html>
