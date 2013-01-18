@@ -120,11 +120,19 @@ address {
   -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 }
 
-.boxcaption h5 {
-  color: white;
+.boxcaption {
+  h4, p {
+    color: white;
+  }
 }
 
 .captionfull .boxcaption {
   top: 175px;
   left: 0;
+}
+
+// ========= End Portfolio Rollover ======
+
+.project_image {
+  margin-left: -21px;
 }

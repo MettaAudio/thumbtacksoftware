@@ -1,4 +1,24 @@
 <% content_for :content do %>
-  <%= yield %>
+  <div class="paper drop-shadow lifted" id="about">
+    <div class="span-8">
+      <%= image_tag 'corner_tack.png', :alt => "Thumb Tack holding up the site", :width => 22, :height => 22 %>
+    </div>
+    <div class="span-15">
+      <ul class="nav">
+        <li><%= link_to 'Home', :root %></li>
+      </ul>
+    </div>
+    <div class="span-1 last">
+      <%= image_tag 'corner_tack.png', :alt => "Thumb Tack holding up the site", :width => 22, :height => 22 %>
+    </div>
+    <div class="span-8">
+      <%= image_tag 'Thumb_Tack_Paper_final.png', :alt => "Thumb Tack on its side", :width => "320", :height => "162" %>
+    </div>
+    <div class="span-16 last">
+      <%= yield %>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
 <% end %>
 <%= render :template => 'layouts/application' %>
