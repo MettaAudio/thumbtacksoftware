@@ -27,6 +27,7 @@ group :development do
   gem 'wirble'
   gem 'what_methods'
   gem 'hirb'
+  gem 'thin'
 end
 
 # To use ActiveModel has_secure_password
