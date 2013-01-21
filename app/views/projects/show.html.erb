@@ -3,5 +3,33 @@
 </h1>
 <%= image_tag "#{@project.image}_620px.png", :class => 'project_image' %>
 <div class="span-8">
+  <h3>Details</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th>URL:</th>
+        <td><a href="http://<%= @project.url %>" target='_blank'><%= @project.url %></a></td>
+      </tr>
+      <tr>
+        <th>Technology:</th>
+        <td><%= @project.technology %></td>
+      </tr>
+      <tr>
+        <th>Launch Date:</th>
+        <td><%= @project.launch_date %></td>
+      </tr>
+      <tr>
+        <th>Responsibilities:</th>
+        <td><%= @project.responsibilities %></td>
+      </tr>
+      <tr>
+        <th>Git Repo:</th>
+        <td><%= @project.git %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="span-6 prepend-1 last">
+  <h3>Description</h3>
   <p><%= @project.description %></p>
 </div>

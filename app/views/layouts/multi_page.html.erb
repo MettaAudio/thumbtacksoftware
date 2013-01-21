@@ -5,9 +5,10 @@
     </div>
     <div class="span-15">
       <ul class="nav">
-        <li class="selected" style="background: url(<%= image_path 'about_selected.png' %>) no-repeat; width:128px; height:85px;">&nbsp;</li>
+        <li class="selected">About</li>
         <li>| <a href="#contact">Contact</a></li>
         <li>| <a href="#portfolio">Portfolio</a></li>
+        <li>| <a href="http://blog.thumbtacksoftware.com">Blog</a></li>
       </ul>
     </div>
     <div class="span-1 last">
@@ -39,8 +40,9 @@
     <div class="span-14">
       <ul class="nav">
         <li><a href="#about">About</a> |</li>
-        <li class="selected" style="background: url(<%= image_path 'contact_selected.png' %>) no-repeat; width:137px; height:88px;">&nbsp;</li>
+        <li class="selected">Contact</li>
         <li>| <a href="#portfolio">Portfolio</a></li>
+        <li>| <a href="http://blog.thumbtacksoftware.com">Blog</a></li>
       </ul>
     </div>
     <div class="span-1 last">
@@ -61,24 +63,33 @@
     <div class="span-9">
       <%= image_tag 'logo_on_paper_215x165.png', :alt => "Thumb Tack holding up the logo", :width => '215', :height => '165' %>
     </div>
+
     <div class="span-14">
       <ul class="nav">
         <li><a href="#about">About</a> |</li>
         <li><a href="#contact">Contact</a> |</li>
-        <li class="selected" style="background: url(<%= image_path 'services_selected.png' %>) no-repeat; width:152px; height:86px;">&nbsp;</li>
+        <li class="selected">Portfolio</li>
+        <li>| <a href="http://blog.thumbtacksoftware.com">Blog</a></li>
       </ul>
     </div>
+
     <div class="span-1 last">
       <%= image_tag 'corner_tack.png', :alt => "Thumb Tack holding up the site", :width => 22, :height => 22 %>
     </div>
+
     <div class="clear">
     </div>
+
     <div class="span-7">
       <%= render "partial/address" %>
     </div>
+
     <div class="span-17 last">
       <%= yield %>
     </div>
+
+    <div class="clear"></div>
+
   </div>
 <% end %>
 <%= render :template => 'layouts/application' %>

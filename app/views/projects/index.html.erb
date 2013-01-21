@@ -2,11 +2,13 @@
 <% @projects.each do |project| %>
     <div class="span-8">
       <div class="boxgrid captionfull">
-        <%= image_tag "#{project.image}_270px.png" %>
+        <%= link_to((image_tag "#{project.image}_270px.png"), project_path(project)) %>
         <div class="cover boxcaption">
-          <h4><%= project.title %></h4>
-          <p><%= project.url %></p>
-          <p>more</p>
+          <h3><%= project.title %></h3>
+          <p>
+            <%= link_to project.url, project_path(project) %><br>
+            <%= link_to 'more information', project_path(project) %>
+          </p>
         </div>
       </div>
     </div>
