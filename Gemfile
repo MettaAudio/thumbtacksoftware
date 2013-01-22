@@ -25,7 +25,6 @@ group :development do
   gem 'wirble'
   gem 'what_methods'
   gem 'hirb'
-  gem 'thin'
 end
 
 group :production do
@@ -47,6 +46,7 @@ end
 # To use debugger
 # gem 'debugger'
 
+gem 'thin'
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
