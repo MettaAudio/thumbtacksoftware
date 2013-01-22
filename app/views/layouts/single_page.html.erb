@@ -15,6 +15,11 @@
       <%= image_tag 'Thumb_Tack_Paper_final.png', :alt => "Thumb Tack on its side", :width => "320", :height => "162" %>
     </div>
     <div class="span-16 last">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </div>
     <div class="clear">
