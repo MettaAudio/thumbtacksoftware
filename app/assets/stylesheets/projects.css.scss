@@ -5,6 +5,7 @@
 
 $tts_brown: #493131;
 $tts_red:   #900;
+$error_red: #fbe3e4;
 
 a:link, a:visited {
   color: $tts_red;
@@ -163,4 +164,22 @@ h1 small {
 
 th {
   text-align: right;
+}
+
+.field_with_errors {
+  display: inline;
+  label {
+    color: $tts_red;
+  }
+  input, textarea {
+    background-color: $error_red;
+  }
+}
+
+fieldset span {
+  width: 50px;
+  float: left;
+  margin-top: 5px;
+  text-align: right;
+  padding-right: 10px;
 }

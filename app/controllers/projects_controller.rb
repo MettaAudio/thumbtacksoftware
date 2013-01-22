@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   def index
     @projects = Project.all
+    @message = Message.new
     render :layout => 'layouts/multi_page'
   end
 
@@ -43,5 +44,17 @@ class ProjectsController < ApplicationController
     @project.destroy
 
     redirect_to projects_url
+  end
+
+  def send_mail
+    @message = Message.new(params[:message])
+
+    if @message.valid?
+    authorize! :send_mail, NotificationsMailer.new_message(@message).deliver
+      redirect_to(root_path, :notice => "Message was successfully sent.")
+    else
+      flash.now.alert = 'There was an error submitting your message. <a href="#contact">View the contact form</a> for more information.'.html_safe
+      render :action => :index, :layout => 'layouts/multi_page'
+    end
   end
 end

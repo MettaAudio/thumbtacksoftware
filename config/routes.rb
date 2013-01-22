@@ -3,6 +3,7 @@ Tts::Application.routes.draw do
   # match 'admins/sign_up' => 'projects#index'
 
   match 'panel' => redirect('/admins/sign_in')
+  match 'send_mail' => 'projects#send_mail', :as => 'send_mail', :via => :post
 
   devise_for :admins
 

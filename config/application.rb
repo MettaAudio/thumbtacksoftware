@@ -60,5 +60,20 @@ module Tts
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Setup of action mailer for email form
+    config.action_mailer.smtp_settings = {
+      :address              => "box477.bluehost.com",
+      :port                 => 465,
+      :domain               => "thumbtacksoftware.com",
+      :user_name            => "john@thumbtacksoftware.com",
+      :password             => ENV['EMAIL_PASSWORD'],
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "thumbtacksoftware.com"
+    }
   end
 end

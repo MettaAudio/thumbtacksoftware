@@ -13,8 +13,49 @@
 
   <div class="clear"></div>
 
-  <div class="span-7">
+  <div class="span-7 first">
     <%= render "partial/address" %>
+  </div>
+
+  <div class="span-15">
+    <%= form_for @message, :url => send_mail_path do |form| %>
+
+      <% if @message.errors.any? %>
+        <div class="alert">
+          <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being sent:</h2>
+              <ul>
+              <% @message.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <fieldset class="fields">
+        <div class="field">
+          <span><%= form.label :name %></span>
+          <%= form.text_field :name %>
+        </div>
+
+        <div class="field">
+          <span><%= form.label :email %></span>
+          <%= form.text_field :email %>
+        </div>
+        <div class="field">
+          <span><%= form.label :subject %></span>
+          <%= form.text_field :subject %>
+        </div>
+
+        <div class="field">
+          <span><%= form.label :body %></span>
+          <%= form.text_area :body %>
+        </div>
+      </fieldset>
+
+      <fieldset class="actions">
+        <%= form.submit "Send" %>
+      </fieldset>
+    <% end %>
   </div>
 
   <div class="clear"></div>
