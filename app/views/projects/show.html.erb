@@ -16,7 +16,7 @@
       </tr>
       <tr>
         <th>Launch Date:</th>
-        <td><%= @project.launch_date %></td>
+        <td><%= formatted_date(@project.launch_date) %></td>
       </tr>
       <tr>
         <th>Responsibilities:</th>
@@ -26,6 +26,12 @@
         <th>Git Repo:</th>
         <td><%= @project.git %></td>
       </tr>
+      <% if can? :edit, @project %>
+      <tr>
+        <td colspan='2'><%= link_to 'edit', edit_project_path(@project) %></td>
+      </tr>
+
+      <% end %>
     </tbody>
   </table>
 </div>

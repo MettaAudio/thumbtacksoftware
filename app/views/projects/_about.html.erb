@@ -1,0 +1,34 @@
+<div class="paper drop-shadow lifted" id="about">
+  <div class="span-8">
+    <%= image_tag 'corner_tack.png', :alt => "Thumb Tack holding up the site", :width => 22, :height => 22 %>
+  </div>
+
+  <div class="span-15">
+   <%= render :partial => 'partial/main_page_navigation', :locals => { :active => 'about' } %>
+  </div>
+
+  <div class="span-1 last">
+    <%= image_tag 'corner_tack.png', :alt => "Thumb Tack holding up the site", :width => 22, :height => 22 %>
+  </div>
+  <div class="span-8">
+    &nbsp;
+  </div>
+  <div class="span-16 last">
+    <%= image_tag 'logo_286x165.png', :alt => 'Thumb Tack Logo', :id => 'logo', :width => "286", :height => "165" %>
+  </div>
+  <div class="span-9">
+    <%= image_tag 'Thumb_Tack_Paper_final.png', :alt => "Thumb Tack on its side", :width => "320", :height => "162" %>
+  </div>
+  <div class="span-12 last">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <h4>ThumbTack Software, in short, solves the world's technological problems. Want a site refresh? Thumb's up. Need an app? There's a tack for that. (Pardon the puns. We're funny around here.)</h4>
+    <h4>We'll get down to brass, umm... tacks, and get the job done with flying colors. Preferably the colors of Italian push-pins, because we happen to have a thing for office supplies.</h4>
+    <h4><a href="mailto:john@mettaaudio.com">Ping us.</a> We're friendly, and won't make too many lame jokes. (Probably.)</h4>
+  </div>
+  <div class="clear">
+  </div>
+</div>

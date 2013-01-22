@@ -8,6 +8,9 @@
           <p>
             <%= link_to project.url, project_path(project) %><br>
             <%= link_to 'more information', project_path(project) %>
+          <% if can? :edit, project %>
+             <br> <%= link_to 'edit', edit_project_path(project) %>
+            <% end %>
           </p>
         </div>
       </div>

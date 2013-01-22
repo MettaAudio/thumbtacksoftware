@@ -1,4 +1,9 @@
 Tts::Application.routes.draw do
+
+  # match 'admins/sign_up' => 'projects#index'
+
+  match 'panel' => redirect('/admins/sign_in')
+
   devise_for :admins
 
   resources :projects
