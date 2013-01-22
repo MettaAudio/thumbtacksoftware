@@ -75,5 +75,8 @@ module Tts
     config.action_mailer.default_url_options = {
       :host => "thumbtacksoftware.com"
     }
+
+    # For deployment to Heroku
+    config.assets.initialize_on_precompile = false
   end
 end
