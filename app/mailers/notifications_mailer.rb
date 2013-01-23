@@ -1,5 +1,5 @@
 class NotificationsMailer < ActionMailer::Base
-  default from: "web@thumbtacksoftware.com"
+  default from: "john@thumbtacksoftware.com"
   default to:   "john@thumbtacksoftware.com"
 
   def new_message(message)
