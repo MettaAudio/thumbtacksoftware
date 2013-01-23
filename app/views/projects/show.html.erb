@@ -11,21 +11,33 @@
         <td><a href="http://<%= @project.url %>" target='_blank'><%= @project.url %></a></td>
       </tr>
       <tr>
+        <th>Platform:</th>
+        <td><%= @project.platform %></td>
+      </tr>
+      <tr>
         <th>Technology:</th>
         <td><%= @project.technology %></td>
       </tr>
-      <tr>
-        <th>Launch Date:</th>
-        <td><%= formatted_date(@project.launch_date) %></td>
-      </tr>
+     <%# HACK: Set launch date to 'August 2008' to hid the date for projects I didn't launch %>
+      <% if formatted_date(@project.launch_date) != 'August 2008' %>
+        <tr>
+          <th>Launch Date:</th>
+          <td><%= formatted_date(@project.launch_date) %></td>
+        </tr>
+      <% end %>
+
       <tr>
         <th>Responsibilities:</th>
         <td><%= @project.responsibilities %></td>
       </tr>
-      <tr>
-        <th>Git Repo:</th>
-        <td><%= @project.git %></td>
-      </tr>
+
+      <% if @project.git %>
+        <tr>
+          <th>Git Repo:</th>
+          <td><%= @project.git %></td>
+        </tr>
+      <% end %>
+
       <% if can? :edit, @project %>
       <tr>
         <td colspan='2'><%= link_to 'edit', edit_project_path(@project) %></td>

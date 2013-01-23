@@ -4,7 +4,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
+    @ror_projects       = Project.ror
+    @spree_projects     = Project.spree
+    @shopify_projects   = Project.spree
+    @html_projects      = Project.html
     @message = Message.new
     render :layout => 'layouts/multi_page'
   end

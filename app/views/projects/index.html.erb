@@ -1,20 +1,32 @@
 <h1>Portfolio</h1>
-<% @projects.each do |project| %>
-    <div class="span-8">
-      <div class="boxgrid captionfull">
-        <%= link_to((image_tag "#{project.image}_270px.png"), project_path(project)) %>
-        <div class="cover boxcaption">
-          <h3><%= project.title %></h3>
-          <p>
-            <%= link_to project.url, project_path(project) %><br>
-            <%= link_to 'more information', project_path(project) %>
-          <% if can? :edit, project %>
-             <br> <%= link_to 'edit', edit_project_path(project) %>
-            <% end %>
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <%= cycle('','<div class="clear"></div>') %>
+<h3>Ruby on Rails</h3>
+<% @ror_projects.each do |project| %>
+    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+    <%= cycle('','<div class="clear"></div>').html_safe %>
 <% end %>
+<div class="clear"></div>
+<%# reset_cycle %>
+
+<h3>Spree Commerce</h3>
+<% @spree_projects.each do |project| %>
+    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% end %>
+<div class="clear"></div>
+<% reset_cycle %>
+
+<h3>Shopify</h3>
+<% @shopify_projects.each do |project| %>
+    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% end %>
+<div class="clear"></div>
+<% reset_cycle %>
+
+<h3>Other Projects</h3>
+<% @html_projects.each do |project| %>
+    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% end %>
+<div class="clear"></div>
