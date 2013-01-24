@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :platform, :description, :git, :image, :launch_date, :responsibilities, :technology, :title, :url
+  attr_accessible :platform, :description, :git, :image, :launch_date, :responsibilities, :technology, :title, :url, :sequence
 
   scope :ror,     where(:platform => 'Ruby on Rails')
   scope :spree,   where(:platform => 'Spree Commerce / Ruby on Rails')

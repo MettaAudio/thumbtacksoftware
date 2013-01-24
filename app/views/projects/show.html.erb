@@ -31,7 +31,7 @@
         <td><%= @project.responsibilities %></td>
       </tr>
 
-      <% if @project.git %>
+      <% if !@project.git.blank? %>
         <tr>
           <th>Git Repo:</th>
           <td><a href="https://github.com/<%= @project.git %>" target='_blank'><%= @project.git %></a></td>

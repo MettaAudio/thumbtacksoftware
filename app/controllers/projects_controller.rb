@@ -1,13 +1,14 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource
   layout "single_page", :except => [:index]
+  SORT_ORDER = 'sequence ASC, launch_date DESC'
 
   # GET /projects
   def index
-    @ror_projects       = Project.ror
-    @spree_projects     = Project.spree
-    @shopify_projects   = Project.shopify
-    @html_projects      = Project.html
+    @ror_projects       = Project.ror.order(SORT_ORDER)
+    @spree_projects     = Project.spree.order(SORT_ORDER)
+    @shopify_projects   = Project.shopify.order(SORT_ORDER)
+    @html_projects      = Project.html.order(SORT_ORDER)
     @message = Message.new
     render :layout => 'layouts/multi_page'
   end

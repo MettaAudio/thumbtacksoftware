@@ -25,6 +25,7 @@ group :development do
   gem 'wirble'
   gem 'what_methods'
   gem 'hirb'
+  gem 'taps'
 end
 
 group :production do
