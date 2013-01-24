@@ -34,7 +34,7 @@
       <% if @project.git %>
         <tr>
           <th>Git Repo:</th>
-          <td><%= @project.git %></td>
+          <td><a href="https://github.com/<%= @project.git %>" target='_blank'><%= @project.git %></a></td>
         </tr>
       <% end %>
 
