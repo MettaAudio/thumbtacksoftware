@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   def index
     @ror_projects       = Project.ror
     @spree_projects     = Project.spree
-    @shopify_projects   = Project.spree
+    @shopify_projects   = Project.shopify
     @html_projects      = Project.html
     @message = Message.new
     render :layout => 'layouts/multi_page'
