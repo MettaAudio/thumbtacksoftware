@@ -32,18 +32,18 @@ ActiveRecord::Schema.define(:version => 20130124175035) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "projects", :force => true do |t|
-    t.string    "url"
-    t.date      "launch_date"
-    t.text      "description"
-    t.string    "responsibilities"
-    t.string    "title"
-    t.string    "technology"
-    t.string    "image"
-    t.string    "git"
-    t.timestamp "created_at",       :null => false
-    t.timestamp "updated_at",       :null => false
-    t.string    "platform"
-    t.integer   "sequence"
+    t.string   "url"
+    t.date     "launch_date"
+    t.text     "description"
+    t.string   "responsibilities"
+    t.string   "title"
+    t.string   "technology"
+    t.string   "image"
+    t.string   "git"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "platform"
+    t.integer  "sequence",         :default => 99
   end
 
 end
