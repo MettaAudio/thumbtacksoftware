@@ -1,32 +1,50 @@
-<h1>Portfolio</h1>
+<h1>Portfolio <small><%=  link_to('New Project', new_project_path) if can? :edit, @featured_projects %></small></h1>
 
-<h3>Ruby on Rails</h3>
-<% @ror_projects.each do |project| %>
-    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
-    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% if @featured_projects.present? %>
+  <h3>Featured Projects</h3>
+  <% @featured_projects.each do |project| %>
+  <h2>
+    <%= project.title %> <small> | <a href="<%= "http://#{project.url}" %>" target='_blank'><%= project.url %></a></small>
+  </h2>
+    <%= render :partial => 'project_details', :locals => { :project => project } %>
+  <% end %>
 <% end %>
-<div class="clear"></div>
-<%# reset_cycle %>
 
-<h3>Spree Commerce</h3>
-<% @spree_projects.each do |project| %>
-    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
-    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% if @ror_projects.present? %>
+  <h3>Ruby on Rails</h3>
+  <% @ror_projects.each do |project| %>
+      <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+      <%= cycle('','<div class="clear"></div>').html_safe %>
+  <% end %>
+  <div class="clear"></div>
+  <%= reset_cycle %>
 <% end %>
-<div class="clear"></div>
-<% reset_cycle %>
 
-<h3>Shopify</h3>
-<% @shopify_projects.each do |project| %>
-    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
-    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% if @spree_projects.present? %>
+  <h3>Spree Commerce</h3>
+  <% @spree_projects.each do |project| %>
+      <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+      <%= cycle('','<div class="clear"></div>').html_safe %>
+  <% end %>
+  <div class="clear"></div>
+  <% reset_cycle %>
 <% end %>
-<div class="clear"></div>
-<% reset_cycle %>
 
-<h3>Other Projects</h3>
-<% @html_projects.each do |project| %>
-    <%= render :partial => 'thumbnail', :locals => { :project => project } %>
-    <%= cycle('','<div class="clear"></div>').html_safe %>
+<% if @shopify_projects.present? %>
+  <h3>Shopify</h3>
+  <% @shopify_projects.each do |project| %>
+      <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+      <%= cycle('','<div class="clear"></div>').html_safe %>
+  <% end %>
+  <div class="clear"></div>
+  <% reset_cycle %>
 <% end %>
-<div class="clear"></div>
+
+<% if @html_projects.present? %>
+  <h3>Other Projects</h3>
+  <% @html_projects.each do |project| %>
+      <%= render :partial => 'thumbnail', :locals => { :project => project } %>
+      <%= cycle('','<div class="clear"></div>').html_safe %>
+  <% end %>
+  <div class="clear"></div>
+<% end %>

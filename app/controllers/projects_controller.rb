@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
     @spree_projects     = Project.spree.order(SORT_ORDER)
     @shopify_projects   = Project.shopify.order(SORT_ORDER)
     @html_projects      = Project.html.order(SORT_ORDER)
+    @featured_projects  = Project.featured.order(SORT_ORDER)
     @message = Message.new
     render :layout => 'layouts/multi_page'
   end
